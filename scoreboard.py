@@ -23,3 +23,13 @@ class Scoreboard(Turtle):
             self.r_score += 1
         self.clear()
         self.update_scoreboard()
+
+    def declare_winner(self):
+        if self.l_score == 5 or self.r_score == 5:
+            if self.l_score == 5:
+                side = 'Left'
+            else:
+                side = "Right"
+            self.home()
+            self.write(f"{side} paddle wins!", align=ALIGNMENT, font=FONT)
+            return True
